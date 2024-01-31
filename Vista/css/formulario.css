@@ -26,7 +26,7 @@ form{
     background: #7aa5d2;
     border-radius: 15px;
     width: 420px;
-    height: 440px;
+    height: 480px;
     padding: 20px;
     position: relative;
 }
@@ -38,7 +38,7 @@ input{
     border: none;
     height: 32px;
 }
-p{
+.botones{
     margin-top: 40px;
     text-align: center;
 }
@@ -94,4 +94,12 @@ label[for="file_producto"]{
 }
 i{
     color: gainsboro;
+}
+select{
+    background-color: #cedff1;
+    color: #000;
+    border-radius: 2px;
+    width: 250px;
+    border: none;
+    height: 32px;
 }

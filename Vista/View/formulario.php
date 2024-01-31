@@ -1,3 +1,6 @@
+<?php
+require '../../conexion.php'
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,23 +34,33 @@
                         <input id="precio-producto" type="text" name="precioP">
                     </div>
 
-                    <label for="cantidad-producto">Cantidad:</label>
+                <label for="cantidad-producto">Cantidad:</label>
                     <div>                
                         <input id="cantidad-producto" type="text" name="cantidadP">
                     </div>
-
-                <label for="proveedor-producto">Proveedor</label>
-                    <option selected disabled>--seleccionar proveedor--</option>
-                    
-                <div>
-                    <label for="file_producto"><i class="fa-regular fa-file-excel"></i></label>
+                <label for="file_producto"><i class="fa-regular fa-file-excel"></i></label>
                     <input id="file_producto" type="file" name="archivoP">                
-                </div>
+                <div>
+                <label for="proveedor-producto">Proveedor:</label><br>
+                        <select name="proveedorP" id="proveedor-producto">
+                            <option selected disabled>--Seleccionar categoria--</option>
+                                <?php
+                                    
+                                    $sql = "SELECT id_prov,nombre FROM proveedores";
+                                    $resultado = pg_query($conexion, $sql);
+
+                                    while ($obj = pg_fetch_assoc($resultado)) {
+                                        echo "<option value='" . $obj['id_prov'] . "'>" . $obj['nombre'] . "</option>";
+                                    }
+                                ?>
+                           
+                        </select>
+                </div>  
                 
-                <p>
+                <div class="botones">
                     <button class="submit" type="submit" name="Agregar">AGREGAR</button>                     
                     <button class="reset" type="reset" name="Cancelar"><a href="http://localhost/ProyectoTeclab/productos.php">CANCELAR</a></button>
-                </p>          
+                </div>          
             </form>
         </div>
     </body>

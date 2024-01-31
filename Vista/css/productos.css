@@ -15,7 +15,7 @@ html{
     z-index: 99;
 }
 table{
-    width: 900px;
+    width: 1000px;
     border-collapse: collapse;
 }
 thead{
@@ -33,6 +33,17 @@ tr:hover td{
     background-color: #7aa5d2;
     color: #fff;
     cursor: pointer;
+}
+.acciones{
+    display: flex;
+}
+.btn-accion{
+    text-decoration: none;
+    margin-left: 5px;
+    color: #fff;
+    background-color: #7aa5d2;
+    border-radius: 5px;
+    padding: 7px;
 }
 img{
     width: 200px;
@@ -52,7 +63,7 @@ img{
     border-radius: 5px;
     cursor: pointer;
 }
-.boton a{
+#btn-agregar a{
     text-decoration: none;
     color: #fff;
 }

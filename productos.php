@@ -1,9 +1,3 @@
-<?php
-
-require 'querys.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,10 +25,14 @@ require 'querys.php';
                         <th id="precio">Precio</th>
                         <th id="cantidad">Cantidad</th>
                         <th id="proveedor">Proveedor</th>
+                        <th id="acciones">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    
+                    require 'querys.php';
+                    
                     while($obj=pg_fetch_object($consulta)){ ?>
                     
                     <tr>
@@ -43,6 +41,10 @@ require 'querys.php';
                         <td><?php echo $obj->precio;?></td>
                         <td><?php echo $obj->cantidad;?></td>
                         <td><?php echo $obj->proveedores;?></td>
+                        <td class="acciones">
+                            <a href="editarForm.php?Id=<?php echo $obj->id_prod?>" class="btn-accion" id="editar">Editar</a>
+                            <a href="" class="btn-accion" id="eliminar">Eliminar</a>
+                        </td>
                     </tr>
                     <?php
                 }
@@ -51,7 +53,7 @@ require 'querys.php';
             </table>
         </div>
         <div class="botones">
-            <button class="boton" id="btn-agregar"><a href="http://localhost/ProyectoTeclab/Vista/View/formulario.html">Agregar</a></button>
+            <button class="boton" id="btn-agregar"><a href="http://localhost/ProyectoTeclab/Vista/View/formulario.php">Agregar</a></button>
             <button class="boton" id="btn-editar">Editar</button>
             <button class="boton" id="btn-borrar">Borrar</button>
         </div>
