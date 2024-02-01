@@ -17,7 +17,7 @@ require '../../conexion.php'
     </div>
     <!-- Inicio -->
         <div class="contenedor-formulario"> 
-            <form action="http://localhost/ProyectoTeclab/altaProductos.php" method="POST" id="form-productos">
+            <form action="../../editarDatos.php" method="POST" id="form-productos">
                 <h2>Agregar Producto</h2>           
                 <label for="id-producto">ID:</label>
                     <div>
