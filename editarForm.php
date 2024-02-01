@@ -12,7 +12,7 @@ include 'conexion.php';
 </head>
 <body>
 <div class="contenedor-formulario"> 
-        <form action="http://localhost/ProyectoTeclab/altaProductos.php" method="POST" id="form-productos">
+        <form action="http://localhost/ProyectoTeclab/editarDatos.php" method="POST" id="form-productos">
             <?php 
                 $req = $_REQUEST['Id'];
 
@@ -21,6 +21,8 @@ include 'conexion.php';
 
                 $row=pg_fetch_assoc($obj)
             ?>
+
+            <input type="Hidden" name="Id" value="<?php echo $row['id_prod'];?>">
 
             <h2>Editar Producto</h2>           
                 <label for="id-producto">ID:</label>
