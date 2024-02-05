@@ -66,3 +66,13 @@ img{
     border-color: #7aa5d2;
     border-radius: 5px;
 }
+#atras{
+    background-color: #7aa5d2;
+    border-color: #7aa5d2;
+    border-radius: 45%;
+    width: 40px;
+    height: 40px;
+}
+i{
+    color: #fff;
+}

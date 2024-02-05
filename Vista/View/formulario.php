@@ -21,28 +21,28 @@ require '../../querys.php';
                 <h2>Agregar Producto</h2>           
                 <label for="id-producto">ID:</label>
                     <div>
-                        <input id="id-producto" type="text" name="idP">
+                        <input id="id-producto" type="text" name="id-producto">
                     </div>
 
                 <label for="nombre-producto" >Producto:</label>
                     <div>               
-                        <input id="nombre-producto" type="text" name="nombreP">               
+                        <input id="nombre-producto" type="text" name="nombre-producto">               
                     </div>
 
                 <label for="precio-producto">Precio:</label>
                     <div>                
-                        <input id="precio-producto" type="text" name="precioP">
+                        <input id="precio-producto" type="text" name="precio-producto">
                     </div>
 
                 <label for="cantidad-producto">Cantidad:</label>
                     <div>                
-                        <input id="cantidad-producto" type="text" name="cantidadP">
+                        <input id="cantidad-producto" type="text" name="cantidad-producto">
                     </div>
                 <label for="file_producto"><i class="fa-regular fa-file-excel"></i></label>
                     <input id="file_producto" type="file" name="archivoP">                
                 <div>
                 <label for="proveedor-producto">Proveedor:</label><br>
-                        <select name="proveedorP" id="proveedor-producto">
+                        <select name="proveedor-producto" id="proveedor-producto">
                             <option selected disabled>--Seleccionar categoria--</option>
                                 <?php
                                     

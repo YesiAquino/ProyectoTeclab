@@ -19,10 +19,10 @@ include 'conexion.php';
                 $sql = "SELECT * FROM productos WHERE id_prod='$req'";
                 $obj = pg_query($conexion, $sql);
 
-                $row=pg_fetch_assoc($obj)
+                $row=pg_fetch_assoc($obj);
             ?>
 
-            <input type="Hidden" name="Id" value="<?php echo $row['id_prod'];?>">
+        <input type="Hidden" name="Id" value="<?php echo $row['id_prod']?>">
 
             <h2>Editar Producto</h2>           
                 <label for="id-producto">ID:</label>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://localhost/ProyectoTeclab/Vista/css/productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lista de Productos</title>
 </head>
 <body>
@@ -13,6 +14,9 @@
     
     <!-- Seccion Productos -->
     <section class="productos">
+        <div class="atras">
+            <button id="atras"><a href="http://localhost/ProyectoTeclab/"><i class="fa-solid fa-arrow-left"></i></a></button>
+        </div>
         <div class="busqueda">
             <button id="buscar">Buscar</button>
         </div>
@@ -43,7 +47,7 @@
                         <td><?php echo $obj->proveedores;?></td>
                         <td class="acciones">
                             <a href="editarForm.php?Id=<?php echo $obj->id_prod?>" class="btn-accion" id="editar">Editar</a>
-                            <a href="" class="btn-accion" id="eliminar">Eliminar</a>
+                            <a href="eliminarDato.php?Id=<?php echo $obj->id_prod?>" class="btn-accion" id="eliminar">Eliminar</a>
                         </td>
                     </tr>
                     <?php
@@ -54,8 +58,8 @@
         </div>
         <div class="botones">
             <button class="boton" id="btn-agregar"><a href="http://localhost/ProyectoTeclab/Vista/View/formulario.php">Agregar</a></button>
-            <button class="boton" id="btn-editar">Editar</button>
-            <button class="boton" id="btn-borrar">Borrar</button>
+            <!-- <button class="boton" id="btn-editar">Editar</button>
+            <button class="boton" id="btn-borrar">Borrar</button> -->
         </div>
     </section>
 </body>
