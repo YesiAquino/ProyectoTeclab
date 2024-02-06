@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include '../../conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ include 'conexion.php';
 </head>
 <body>
 <div class="contenedor-formulario"> 
-        <form action="http://localhost/ProyectoTeclab/editarDatos.php" method="POST" id="form-productos">
+        <form action="http://localhost/ProyectoTeclab/Productos/ABM/editarDatos.php" method="POST" id="form-productos">
             <?php 
                 $req = $_REQUEST['Id'];
 
@@ -60,7 +60,7 @@ include 'conexion.php';
                     </select>                
                 <div class="botones">
                     <button class="submit" type="submit" name="Agregar">AGREGAR</button>                     
-                    <button class="reset" type="reset" name="Cancelar"><a href="http://localhost/ProyectoTeclab/productos.php">CANCELAR</a></button>
+                    <button class="reset" type="reset" name="Cancelar"><a href="http://localhost/ProyectoTeclab/Productos/productos.php">CANCELAR</a></button>
                 </div>
         </form>
     </div>

@@ -1,2 +1,2 @@
 <?php
-require 'Vista/View/inicio.html';
+require 'inicio.html';
