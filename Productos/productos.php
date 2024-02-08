@@ -35,24 +35,28 @@
                 <tbody>
                     <?php
                     
-                    require 'querys.php';
+                    require '../conexion.php';
+
+                    $query = "SELECT * FROM productos
+                    INNER JOIN proveedores ON productos.proveedores = proveedores.id_prov";
+                    $sql = pg_query($conexion,$query);
                     
-                    while($obj=pg_fetch_object($consulta)){ ?>
+                    while($consulta=pg_fetch_assoc($sql)){ ?>
                     
-                    <tr>
-                        <td><?php echo $obj->id_prod;?></td>
-                        <td><?php echo $obj->nombre;?></td>
-                        <td><?php echo $obj->precio;?></td>
-                        <td><?php echo $obj->cantidad;?></td>
-                        <td><?php echo $obj->proveedores;?></td>
-                        <td class="acciones">
-                            <a href="ABM/editarForm.php?Id=<?php echo $obj->id_prod?>" class="btn-accion" id="editar">Editar</a>
-                            <a href="ABM/eliminarDato.php?Id=<?php echo $obj->id_prod?>" class="btn-accion" id="eliminar">Eliminar</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $consulta['id_prod'];?></td>
+                            <td><?php echo $consulta['nombre_prod'];?></td>
+                            <td><?php echo $consulta['precio'];?></td>
+                            <td><?php echo $consulta['cantidad'];?></td>
+                            <td><?php echo $consulta['nombre_prov'];?></td>
+                            <td class="acciones">
+                                <a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="editar">Editar</a>
+                                <a href="ABM/eliminarDato.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="eliminar">Eliminar</a>
+                            </td>
+                        </tr>
                     <?php
-                }
-                ?>
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

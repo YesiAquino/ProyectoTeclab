@@ -46,11 +46,11 @@ require '../conexion.php';
                             <option selected disabled>--Seleccionar categoria--</option>
                                 <?php
                                     
-                                    $sql = "SELECT id_prov,nombre FROM proveedores";
+                                    $sql = "SELECT id_prov,nombre_prov FROM proveedores";
                                     $resultado = pg_query($conexion, $sql);
 
                                     while ($obj = pg_fetch_assoc($resultado)) {
-                                        echo "<option value='" . $obj['id_prov'] . "'>" . $obj['nombre'] . "</option>";
+                                        echo "<option value='" . $obj['id_prov'] . "'>" . $obj['nombre_prov'] . "</option>";
                                     }
                                 ?>
                            

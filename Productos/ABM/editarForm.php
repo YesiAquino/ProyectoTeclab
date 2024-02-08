@@ -25,10 +25,8 @@ include '../../conexion.php';
         <input type="Hidden" name="Id" value="<?php echo $row['id_prod']?>">
 
             <h2>Editar Producto</h2>           
-                <label for="id-producto">ID:</label>
-                    <input id="id-producto" type="text" name="idP" value="<?php echo $row['id_prod']?>">
                 <label for="nombre-producto" >Producto:</label>
-                    <input id="nombre-producto" type="text" name="nombreP" value="<?php echo $row['nombre']?>">               
+                    <input id="nombre-producto" type="text" name="nombreP" value="<?php echo $row['nombre_prod']?>">               
                 <label for="precio-producto">Precio:</label>
                     <input id="precio-producto" type="text" name="precioP" value="<?php echo $row['precio']?>">
                 <label for="cantidad-producto">Cantidad:</label>
@@ -45,13 +43,16 @@ include '../../conexion.php';
 
                             $row1 = pg_fetch_assoc($obj1);
 
-                            echo "<option selected value='".$row1['id_prov']."'>".$row1['nombre']."</option>";
+                            echo "<option selected value='".$row1['id_prov']."'>".$row1['nombre_prov']."</option>";
 
                             $sql2 = "SELECT * FROM proveedores";
                             $obj2 = pg_query($conexion, $sql2);
 
-                            while ($fila=pg_fetch_assoc($obj2)){
-                                echo "<option value='".$fila['Id']."'>".$fila['nombre']."</option>";
+                            while ($fila = pg_fetch_assoc($obj2)) {
+                                
+                                $selected = ($fila['id_prov'] == $row['proveedor']) ? 'selected' : '';
+
+                                echo "<option value='" . $fila['id_prov'] . "' $selected>" . $fila['nombre_prov'] . "</option>";
                             }
 
                             
