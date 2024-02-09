@@ -27,7 +27,7 @@
                         <th id="id-producto">ID</th>
                         <th id="nombre-producto">Producto</th>
                         <th id="precio">Precio</th>
-                        <th id="cantidad">Cantidad</th>
+                        <th id="stock">Stock</th>
                         <th id="proveedor">Proveedor</th>
                         <th id="acciones">Acciones</th>
                     </tr>
@@ -47,7 +47,7 @@
                             <td><?php echo $consulta['id_prod'];?></td>
                             <td><?php echo $consulta['nombre_prod'];?></td>
                             <td><?php echo $consulta['precio'];?></td>
-                            <td><?php echo $consulta['cantidad'];?></td>
+                            <td><?php echo $consulta['stock'];?></td>
                             <td><?php echo $consulta['nombre_prov'];?></td>
                             <td class="acciones">
                                 <a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="editar">Editar</a>

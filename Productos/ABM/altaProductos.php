@@ -7,7 +7,7 @@ $precio = $_POST['precioProducto'];
 $cantidad = $_POST['cantidadProducto'];
 $proveedor = $_POST['proveedorProducto'];
 
-$query = ("INSERT INTO productos(id_prod,nombre_prod,precio,cantidad,proveedores)VALUES('$id','$nombre','$precio','$cantidad','$proveedor')");
+$query = ("INSERT INTO productos(id_prod,nombre_prod,precio,stock,proveedores)VALUES('$id','$nombre','$precio','$cantidad','$proveedor')");
 
 if ($obj = pg_query($conexion, $query)) {
     header("location:../productos.php");

@@ -11,7 +11,7 @@ $proveedores = $_POST['proveedorP'];
 $sql = "UPDATE productos SET
         nombre_prod='".$nombre."',
         precio='".$precio."',
-        cantidad='".$cantidad."',
+        stock='".$cantidad."',
         proveedores='".$proveedores."' WHERE id_prod = '$id'";
 
 if ($obj = pg_query($conexion, $sql)) {

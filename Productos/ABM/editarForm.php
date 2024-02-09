@@ -30,7 +30,7 @@ include '../../conexion.php';
                 <label for="precio-producto">Precio:</label>
                     <input id="precio-producto" type="text" name="precioP" value="<?php echo $row['precio']?>">
                 <label for="cantidad-producto">Cantidad:</label>
-                    <input id="cantidad-producto" type="text" name="cantidadP" value="<?php echo $row['cantidad']?>">
+                    <input id="cantidad-producto" type="text" name="cantidadP" value="<?php echo $row['stock']?>">
                 <label for="proveedor-producto">Proveedor:</label><br>
                     <select name="proveedorP" id="proveedor-producto">
                         <option selected disabled>--Seleccionar categoria--</option>
