@@ -50,8 +50,9 @@
                             <td><?php echo $consulta['stock'];?></td>
                             <td><?php echo $consulta['nombre_prov'];?></td>
                             <td class="acciones">
-                                <a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="editar">Editar</a>
-                                <a href="ABM/eliminarDato.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="eliminar">Eliminar</a>
+                                <button class="accion" id="editar"><a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>">Editar</a></button>
+                                <button class="accion" id="eliminar"><a href="ABM/eliminarDato.php?Id=<?php echo $consulta['id_prod']?>">Eliminar</a></button>
+                                <button class="accion"><i class="fa-solid fa-cart-shopping"></i></button>
                             </td>
                         </tr>
                     <?php

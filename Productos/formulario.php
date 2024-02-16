@@ -20,28 +20,16 @@ require '../conexion.php';
             <form action="http://localhost/ProyectoTeclab/Productos/ABM/altaProductos.php" method="POST" id="form-productos">
                 <h2>Agregar Producto</h2>           
                 <label for="id-producto">ID:</label>
-                    <div>
-                        <input id="id-producto" type="text" name="idProducto">
-                    </div>
-
+                    <input id="id-producto" type="text" name="idProducto">
                 <label for="nombre-producto" >Producto:</label>
-                    <div>               
-                        <input id="nombre-producto" type="text" name="nombreProducto">               
-                    </div>
-
+                    <input id="nombre-producto" type="text" name="nombreProducto">               
                 <label for="precio-producto">Precio:</label>
-                    <div>                
                         <input id="precio-producto" type="text" name="precioProducto">
-                    </div>
-
                 <label for="cantidad-producto">Cantidad:</label>
-                    <div>                
                         <input id="cantidad-producto" type="text" name="cantidadProducto">
-                    </div>
                 <label for="file_producto"><i class="fa-regular fa-file-excel"></i></label>
                     <input id="file_producto" type="file" name="archivoP">                
-                <div>
-                <label for="proveedor-producto">Proveedor:</label><br>
+                <label for="proveedor-producto">Proveedor:</label>
                         <select name="proveedorProducto" id="proveedorProducto">
                             <option selected disabled>--Seleccionar categoria--</option>
                                 <?php
@@ -54,9 +42,7 @@ require '../conexion.php';
                                     }
                                 ?>
                            
-                        </select>
-                </div>  
-                
+                        </select>                
                 <div class="botones">
                     <button class="submit" type="submit" name="Agregar">AGREGAR</button>                     
                     <button class="reset" type="reset" name="Cancelar"><a href="http://localhost/ProyectoTeclab/Productos/productos.php">CANCELAR</a></button>

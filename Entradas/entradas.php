@@ -14,7 +14,7 @@
     
     <!-- Seccion Productos -->
     <div class="atras">
-        <button id="atras"><a id=a href="http://localhost/ProyectoTeclab/"><i class="fa-solid fa-arrow-left"></i></a></button>
+        <button id="atras"><a id=a href="http://localhost/ProyectoTeclab/inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
     </div>
     <section class="entradas">
         <div class="busqueda">
@@ -26,8 +26,8 @@
                     <tr>
                         <th id="id-producto">ID</th>
                         <th id="nombre-producto">Producto</th>
-                        <th id="fecha">Fecha</th>
-                        <th id="cantidad">Cantidad</th>
+                        <th id="fecha">Cantidad</th>
+                        <th id="cantidad">Fecha</th>
                         <th id="acciones">Acciones</th>
                     </tr>
                 </thead>
@@ -47,8 +47,8 @@
                             <td><?php echo $consulta['cantidad'];?></td>
                             <td><?php echo $consulta['fecha'];?></td>
                             <td class="acciones">
-                                <a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="editar">Editar</a>
-                                <a href="ABM/eliminarDato.php?Id=<?php echo $consulta['id_prod']?>" class="btn-accion" id="eliminar">Eliminar</a>
+                                <button class="accion" id="editar"><a href="BM/editarForm2.php?Id=<?php echo $consulta['id_prod']?>">Editar</a></button>
+                                <button class="accion" id="eliminar"><a href="BM/eliminarDatos2.php?Id=<?php echo $consulta['id_prod']?>">Eliminar</a></button>                               
                             </td>
                         </tr>
                     <?php

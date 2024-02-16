@@ -38,6 +38,14 @@ input{
     border: none;
     height: 32px;
 }
+select{
+    background-color: #cedff1;
+    color: #000;
+    border-radius: 2px;
+    width: 250px;
+    border: none;
+    height: 32px;
+}
 .botones{
     margin-top: 40px;
     text-align: center;
@@ -71,6 +79,7 @@ a{
 
 label{
     font-weight: bold;
+    display: block;
 }
 
 input[type="file"]{
@@ -94,12 +103,4 @@ label[for="file_producto"]{
 }
 i{
     color: gainsboro;
-}
-select{
-    background-color: #cedff1;
-    color: #000;
-    border-radius: 2px;
-    width: 250px;
-    border: none;
-    height: 32px;
 }
