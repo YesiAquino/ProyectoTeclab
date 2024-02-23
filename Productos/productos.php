@@ -22,18 +22,23 @@ include 'carrito.php';
         <?php echo $mensaje;?>
     </div>
         <div class="navBar">
+
             <div class="atras">
                 <button class="accion" id="atras"><a href="../inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
             </div>
-            <div class>
+            <div class="buscador">
+                <form action="" method="post">
+                    <input type="text" name="campo" id="campo">
+                    <label for="campo"><button><i class="fa-solid fa-magnifying-glass"></i></button></label>
+                </form>
+                </div>
+            <div class="carrito">
                 <button class="accion" id="carrito"><a href="http://localhost/ProyectoTeclab/Productos/mostrarCarrito.php">Carrito(<?php
                     echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);
                     ?>)</a></button>
             </div>
+            
         </div>
-            <div class="busqueda">
-                <button id="buscar">Buscar</button>
-            </div>
         <div class="tablaP">
             <table>
                 <thead>
@@ -46,7 +51,7 @@ include 'carrito.php';
                         <th id="acciones">Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="content">
                     <?php
 
                     $query = "SELECT * FROM productos
