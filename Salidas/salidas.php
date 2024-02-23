@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://localhost/ProyectoTeclab/Vista/css/salidas.css">
+    <link rel="stylesheet" href="http://localhost/ProyectoTeclab/Vista/css/productos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Lista de Entradas</title>
 </head>
@@ -15,7 +15,7 @@
     <!-- Seccion Productos -->
     <section class="entradas">
         <div class="atras">
-            <button id="atras"><a href="http://localhost/ProyectoTeclab/"><i class="fa-solid fa-arrow-left"></i></a></button>
+            <button id="atras"><a id=a href="http://localhost/ProyectoTeclab/inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
         </div>
         <div class="busqueda">
             <button id="buscar">Buscar</button>
@@ -26,42 +26,41 @@
                     <tr>
                         <th id="id-producto">ID</th>
                         <th id="nombre-producto">Producto</th>
-                        <th id="fecha">Fecha</th>
                         <th id="cantidad">Cantidad</th>
+                        <th id="fecha">Fecha</th>
+                        <th id="acciones">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>18362</td>
-                        <td>FUSION AGUA CODO 20 90° OFERTA "FUSIONAR"</td>
-                        <td>25/12/2023</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>18363</td>
-                        <td>FUSION AGUA CODO 25 90° OFERTA "FUSIONAR"</td>
-                        <td>31/12/2023</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>18432</td>
-                        <td>FUSION AGUA CODO 32 90° OFERTA "FUSIONAR"</td>
-                        <td>02/01/2024</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>18436</td>
-                        <td>FUSION AGUA CODO 90° 20 X ROSCA H 1/2 OFERTA "FUSIONAR"</td>
-                        <td>17/01/2024</td>
-                        <td>1</td>
-                    </tr>
+                <?php
+                    
+                    require '../conexion.php';
+
+                    $query = "SELECT * FROM Salidas";
+                    $sql = pg_query($conexion,$query);
+                    
+                    while($consulta=pg_fetch_assoc($sql)){ ?>
+                    
+                        <tr>
+                            <td><?php echo $consulta['id_salida'];?></td>
+                            <td><?php echo $consulta['id_prod'];?></td>
+                            <td><?php echo $consulta['cantidad'];?></td>
+                            <td><?php echo $consulta['fecha'];?></td>
+                            <td class="acciones">
+                                <button class="accion" id="editar"><a href="BM/editarForm3.php?Id=<?php echo $consulta['id_prod']?>">Editar</a></button>
+                                <button class="accion" id="eliminar"><a href="BM/eliminarDatos3.php?Id=<?php echo $consulta['id_prod']?>">Eliminar</a></button>                               
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
-        <div class="botones">
+        <!-- <div class="botones">
             <button class="boton" id="btn-editar">Editar</button>
             <button class="boton" id="btn-borrar">Borrar</button>
-        </div>
+        </div> -->
     </section>
 </body>
 </html>

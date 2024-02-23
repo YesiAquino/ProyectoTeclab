@@ -1,3 +1,7 @@
+<?php
+require '../conexion.php';
+include 'carrito.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,13 +18,23 @@
     
     <!-- Seccion Productos -->
     <section class="productos">
-        <div class="atras">
-            <button id="atras"><a href="../inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+    <div class="alert alert-success">
+        <?php echo $mensaje;?>
+    </div>
+        <div class="navBar">
+            <div class="atras">
+                <button class="accion" id="atras"><a href="../inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+            </div>
+            <div class>
+                <button class="accion" id="carrito"><a href="http://localhost/ProyectoTeclab/Productos/mostrarCarrito.php">Carrito(<?php
+                    echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);
+                    ?>)</a></button>
+            </div>
         </div>
-        <div class="busqueda">
-            <button id="buscar">Buscar</button>
-        </div>
-        <div class="tabla">
+            <div class="busqueda">
+                <button id="buscar">Buscar</button>
+            </div>
+        <div class="tablaP">
             <table>
                 <thead>
                     <tr>
@@ -34,8 +48,6 @@
                 </thead>
                 <tbody>
                     <?php
-                    
-                    require '../conexion.php';
 
                     $query = "SELECT * FROM productos
                     INNER JOIN proveedores ON productos.proveedores = proveedores.id_prov";
@@ -52,7 +64,17 @@
                             <td class="acciones">
                                 <button class="accion" id="editar"><a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>">Editar</a></button>
                                 <button class="accion" id="eliminar"><a href="ABM/eliminarDato.php?Id=<?php echo $consulta['id_prod']?>">Eliminar</a></button>
-                                <button class="accion"><i class="fa-solid fa-cart-shopping"></i></button>
+
+                                <form action="" method="post">
+
+                                    <input type="hidden" name="idC" id="idC" value="<?php echo $consulta['id_prod'];?>">
+                                    <input type="hidden" name="nombreC" id="nombreC" value="<?php echo $consulta['nombre_prod'];?>">
+                                    <input type="hidden" name="precioC" id="precioC" value="<?php echo $consulta['precio'];?>">
+                                    <input type="hidden" name="cantidadC" id="cantidadC" value="<?php echo 1;?>">
+
+                                    <button class="accion" type="submit" name="btnComprar" value="Agregar"><i class="fa-solid fa-cart-shopping"></i></button>
+
+                                </form>
                             </td>
                         </tr>
                     <?php

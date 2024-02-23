@@ -3,7 +3,7 @@ html{
     display: flex;
     justify-content: center;
     margin-top: 250px;
-    height: 100vh;
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
 .encabezado{
@@ -13,6 +13,10 @@ html{
     top: 0;
     left: 0;
     z-index: 99;
+}
+.tablaP{
+    display: flex;
+    justify-content: center;
 }
 table{
     width: 1000px;
@@ -46,6 +50,7 @@ tr:hover td{
     border-radius: 5px;
     padding: 7px;
     border-color: #7aa5d2;
+    color: #fff;
 }
 .accion a{
     text-decoration: none;
@@ -97,4 +102,15 @@ img{
 }
 i{
     color: #fff;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+}
+h3{
+    background-color: #7aa5d2;
+    color: #fff;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
 }
