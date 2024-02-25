@@ -27,7 +27,7 @@ include 'carrito.php';
                 <button class="accion" id="atras"><a href="../inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
             </div>
             <div class="buscador">
-                <form action="" method="post">
+                <form action="" method="POST">
                     <input type="text" name="campo" id="campo">
                     <label for="campo"><button><i class="fa-solid fa-magnifying-glass"></i></button></label>
                 </form>
@@ -52,41 +52,31 @@ include 'carrito.php';
                     </tr>
                 </thead>
                 <tbody id="content">
-                    <?php
-
-                    $query = "SELECT * FROM productos
-                    INNER JOIN proveedores ON productos.proveedores = proveedores.id_prov";
-                    $sql = pg_query($conexion,$query);
                     
-                    while($consulta=pg_fetch_assoc($sql)){ ?>
-                    
-                        <tr>
-                            <td><?php echo $consulta['id_prod'];?></td>
-                            <td><?php echo $consulta['nombre_prod'];?></td>
-                            <td><?php echo $consulta['precio'];?></td>
-                            <td><?php echo $consulta['stock'];?></td>
-                            <td><?php echo $consulta['nombre_prov'];?></td>
-                            <td class="acciones">
-                                <button class="accion" id="editar"><a href="ABM/editarForm.php?Id=<?php echo $consulta['id_prod']?>">Editar</a></button>
-                                <button class="accion" id="eliminar"><a href="ABM/eliminarDato.php?Id=<?php echo $consulta['id_prod']?>">Eliminar</a></button>
-
-                                <form action="" method="post">
-
-                                    <input type="hidden" name="idC" id="idC" value="<?php echo $consulta['id_prod'];?>">
-                                    <input type="hidden" name="nombreC" id="nombreC" value="<?php echo $consulta['nombre_prod'];?>">
-                                    <input type="hidden" name="precioC" id="precioC" value="<?php echo $consulta['precio'];?>">
-                                    <input type="hidden" name="cantidadC" id="cantidadC" value="<?php echo 1;?>">
-
-                                    <button class="accion" type="submit" name="btnComprar" value="Agregar"><i class="fa-solid fa-cart-shopping"></i></button>
-
-                                </form>
-                            </td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
                 </tbody>
             </table>
+            <script>
+                    getData()
+
+                    document.getElementById("campo").addEventListener("keyup", getData)
+
+                    function getData() {
+                        let input = document.getElementById("campo").value
+                        let content = document.getElementById("content")
+                        let url = "http://localhost/ProyectoTeclab/Productos/buscador.php"
+                        let formaData = new FormData()
+                        formaData.append('campo', input)
+
+                        fetch(url, {
+                            method: "POST",
+                            body: formaData
+                        }).then(response => response.json())
+                        .then(data => {
+                            content.innerHTML = data
+                        }).catch(err => console.log(err))
+                    }
+
+            </script>
         </div>
         <div class="botones">
             <button class="boton" id="btn-agregar"><a href="http://localhost/ProyectoTeclab/Productos/formulario.php">Agregar</a></button>

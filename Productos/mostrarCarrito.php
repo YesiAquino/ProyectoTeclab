@@ -34,7 +34,7 @@ include 'carrito.php';
                 <tr>
                     <td><?php echo $producto['ID']?></td>
                     <td><?php echo $producto['NOMBRE']?></td>
-                    <td><?php echo $producto['PRECIO']?></td>
+                    <td>$<?php echo $producto ['PRECIO']?></td>
                     <td>
 
 
