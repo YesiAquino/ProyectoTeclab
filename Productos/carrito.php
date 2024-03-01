@@ -40,7 +40,7 @@ $mensaje="";
                         'CANTIDAD'=>$CANTIDAD
                     );
                     $_SESSION['CARRITO'][0]=$producto;
-                    $mensaje= "Producto agregado al carrito";
+                    // $mensaje= "Producto agregado al carrito";
 
                 }else{
 

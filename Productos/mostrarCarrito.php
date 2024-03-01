@@ -8,6 +8,7 @@ include 'carrito.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://localhost/ProyectoTeclab/Vista/css/productos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.1/dist/sweetalert2.min.css">
     <title>Lista del carrito</title>
 </head>
 <body>
@@ -58,10 +59,18 @@ include 'carrito.php';
                 <?php $total=$total+($producto['PRECIO']*$producto['CANTIDAD']); ?>
                 <?php } ?>
                 <tr>
-                    <td><h3>Total</h3></td>
+                    <td colspan="5"><h3>Total</h3></td>
                     <td><h3>$<?php echo number_format($total,2);?></h3></td>
-                    <td><button class="accion">Guardar</button></td>
                 </tr>
+                <td colspan="6">
+                
+                    <form action="guardarVenta.php" method="post">
+                        <input type="submit" name="guardarCarrito" value="guardarCarrito">
+                    </form>
+                </td>
+
+
+
             </tbody>
         </table>
     <?php }else{ ?>

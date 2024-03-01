@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://localhost/ProyectoTeclab/Vista/css/productos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Lista de Entradas</title>
+    <title>Detalle de Salidas</title>
 </head>
 <body>
     <!-- Encabezado -->
@@ -13,10 +13,10 @@
     </div>
     
     <!-- Seccion Productos -->
-    <section class="entradas">
+    <section class="detalle">
         <div class="navBar">
             <div class="atras">
-                <button id="atras"><a id=a href="http://localhost/ProyectoTeclab/inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+                <button id="atras"><a id=a href="../Salidas.php"><i class="fa-solid fa-arrow-left"></i></a></button>
             </div>
             <div class="buscador">
                 <form action="" method="POST">
@@ -31,7 +31,9 @@
                     <tr>
                         <th id="id-salida">ID</th>
                         <th id="cod-ref">Codigo de Referencia</th>
-                        <th id="fecha">Fecha</th>
+                        <th id="id_producto">Producto</th>
+                        <th id="cantidad">Cantidad</th>
+                        <th id="total">Total</th>
                         <th id="acciones">Acciones</th>
                     </tr>
                 </thead>
@@ -47,7 +49,7 @@
                         function getData() {
                             let input = document.getElementById("campo").value
                             let content = document.getElementById("content")
-                            let url = "http://localhost/ProyectoTeclab/Salidas/buscadorSalidas.php"
+                            let url = "http://localhost/ProyectoTeclab/Salidas/DetalleSalidas/buscadorDetalle.php"
                             let formaData = new FormData()
                             formaData.append('campo', input)
 
@@ -61,9 +63,6 @@
                         }
 
                 </script>
-        </div>
-        <div class="botones">
-            <button class="boton" id="btn-detalles"><a href="http://localhost/ProyectoTeclab/Salidas/DetalleSalidas/detalleSalidas.php">Detalles</a></button>
         </div>
     </section>
 </body>

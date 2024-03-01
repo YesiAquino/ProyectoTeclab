@@ -24,25 +24,23 @@ require '../conexion.php';
                 <label for="nombre-producto" >Producto:</label>
                     <input id="nombre-producto" type="text" name="nombreProducto">               
                 <label for="precio-producto">Precio:</label>
-                        <input id="precio-producto" type="text" name="precioProducto">
+                    <input id="precio-producto" type="text" name="precioProducto">
                 <label for="cantidad-producto">Cantidad:</label>
-                        <input id="cantidad-producto" type="text" name="cantidadProducto">
+                    <input id="cantidad-producto" type="text" name="cantidadProducto">
                 <label for="file_producto"><i class="fa-regular fa-file-excel"></i></label>
                     <input id="file_producto" type="file" name="archivoP">                
                 <label for="proveedor-producto">Proveedor:</label>
-                        <select name="proveedorProducto" id="proveedorProducto">
-                            <option selected disabled>--Seleccionar categoria--</option>
-                                <?php
-                                    
-                                    $sql = "SELECT id_prov,nombre_prov FROM proveedores";
-                                    $resultado = pg_query($conexion, $sql);
+                    <select name="proveedorProducto" id="proveedorProducto">
+                        <option selected disabled>--Seleccionar categoria--</option>
+                            <?php
+                                $sql = "SELECT id_prov,nombre_prov FROM proveedores";
+                                $resultado = pg_query($conexion, $sql);
 
-                                    while ($obj = pg_fetch_assoc($resultado)) {
-                                        echo "<option value='" . $obj['id_prov'] . "'>" . $obj['nombre_prov'] . "</option>";
-                                    }
-                                ?>
-                           
-                        </select>                
+                                while ($obj = pg_fetch_assoc($resultado)) {
+                                    echo "<option value='" . $obj['id_prov'] . "'>" . $obj['nombre_prov'] . "</option>";
+                                }
+                            ?>
+                    </select>                
                 <div class="botones">
                     <button class="submit" type="submit" name="Agregar">AGREGAR</button>                     
                     <button class="reset" type="reset" name="Cancelar"><a href="http://localhost/ProyectoTeclab/Productos/productos.php">CANCELAR</a></button>

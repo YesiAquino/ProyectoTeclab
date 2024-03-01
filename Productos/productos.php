@@ -31,7 +31,7 @@ include 'carrito.php';
                     <input type="text" name="campo" id="campo">
                     <label for="campo"><button><i class="fa-solid fa-magnifying-glass"></i></button></label>
                 </form>
-                </div>
+            </div>
             <div class="carrito">
                 <button class="accion" id="carrito"><a href="http://localhost/ProyectoTeclab/Productos/mostrarCarrito.php">Carrito(<?php
                     echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);
@@ -80,8 +80,6 @@ include 'carrito.php';
         </div>
         <div class="botones">
             <button class="boton" id="btn-agregar"><a href="http://localhost/ProyectoTeclab/Productos/formulario.php">Agregar</a></button>
-            <!-- <button class="boton" id="btn-editar">Editar</button>
-            <button class="boton" id="btn-borrar">Borrar</button> -->
         </div>
     </section>
 </body>

@@ -3,14 +3,13 @@ include_once("../../conexion.php");
 
 
 $id = $_POST['Id'];
-$idProd = $_POST['idP'];
-$cantidad = $_POST['cantidadP'];
-$fecha = $_POST['fechaP'];
+$idDet = $_POST['detV'];
+$codRef = $_POST['codV'];
+$fecha = $_POST['fechaV'];
 
 $sql = "UPDATE salidas SET
-        id_prod='".$idProd."',
-        cantidad='".$cantidad."',
-        fecha='".$fecha."' WHERE id_prod = '$id'";
+        cod_ref='".$codRef."',
+        fecha='".$fecha."' WHERE id_det = '$id'";
 
 if ($obj = pg_query($conexion, $sql)) {
     header("location:../salidas.php");

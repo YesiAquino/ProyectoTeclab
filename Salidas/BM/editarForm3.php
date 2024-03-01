@@ -16,26 +16,24 @@ include '../../conexion.php';
             <?php 
                 $req = $_REQUEST['Id'];
 
-                $sql = "SELECT * FROM salidas WHERE id_prod='$req'";
+                $sql = "SELECT * FROM salidas WHERE id_det='$req'";
                 $obj = pg_query($conexion, $sql);
 
                 $row=pg_fetch_assoc($obj);
             ?>
 
-        <input type="Hidden" name="Id" value="<?php echo $row['id_prod']?>">
+        <input type="Hidden" name="Id" value="<?php echo $row['id_det']?>">
 
             <h2>Editar Producto</h2>           
-                <label for="id-salida" >Id Salida:</label>
-                    <input id="id-salida" type="text" name="salidaP" value="<?php echo $row['id_salida']?>">               
-                <label for="id_producto">Id Producto:</label>
-                    <input id="id_producto" type="text" name="idP" value="<?php echo $row['id_prod']?>">
-                <label for="cantidad-producto">Cantidad:</label>
-                    <input id="cantidad-producto" type="text" name="cantidadP" value="<?php echo $row['cantidad']?>">
+                <label for="id_det" >Id Salida:</label>
+                    <input id="id_det" type="text" name="detV" value="<?php echo $row['id_det']?>">               
+                <label for="cod_ref">Id Producto:</label>
+                    <input id="cod_ref" type="text" name="codV" value="<?php echo $row['cod_ref']?>">
                 <label for="fecha">Fecha:</label><br>
-                    <input id="fecha" type="text" name="fechaP" value="<?php echo $row['fecha']?>">
+                    <input id="fecha" type="text" name="fechaV" value="<?php echo $row['fecha']?>">
 
                 <div class="botones">
-                    <button class="submit" type="submit" name="Agregar">AGREGAR</button>                     
+                    <button class="submit" type="submit" name="Guardar">Guardar</button>                     
                     <button class="reset" type="reset" name="Cancelar"><a href="http://localhost/ProyectoTeclab/Salidas/salidas.php">CANCELAR</a></button>
                 </div>
         </form>

@@ -13,12 +13,17 @@
     </div>
     
     <!-- Seccion Productos -->
-    <div class="atras">
-        <button id="atras"><a id=a href="http://localhost/ProyectoTeclab/inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
-    </div>
     <section class="entradas">
-        <div class="busqueda">
-            <button id="buscar">Buscar</button>
+        <div class="navBar">
+            <div class="atras">
+                <button id="atras"><a id=a href="http://localhost/ProyectoTeclab/inicio.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+            </div>
+            <div class="buscador">
+                <form action="" method="POST">
+                    <input type="text" name="campo" id="campo">
+                    <label for="campo"><button><i class="fa-solid fa-magnifying-glass"></i></button></label>
+                </form>
+            </div>
         </div>
         <div class="tabla">
             <table>
@@ -31,31 +36,32 @@
                         <th id="acciones">Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                <?php
+                <tbody id="content">
                     
-                    require '../conexion.php';
-
-                    $query = "SELECT * FROM entradas";
-                    $sql = pg_query($conexion,$query);
-                    
-                    while($consulta=pg_fetch_assoc($sql)){ ?>
-                    
-                        <tr>
-                            <td><?php echo $consulta['id_entrada'];?></td>
-                            <td><?php echo $consulta['id_prod'];?></td>
-                            <td><?php echo $consulta['cantidad'];?></td>
-                            <td><?php echo $consulta['fecha'];?></td>
-                            <td class="acciones">
-                                <button class="accion" id="editar"><a href="BM/editarForm2.php?Id=<?php echo $consulta['id_prod']?>">Editar</a></button>
-                                <button class="accion" id="eliminar"><a href="BM/eliminarDatos2.php?Id=<?php echo $consulta['id_prod']?>">Eliminar</a></button>                               
-                            </td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
                 </tbody>
             </table>
+            <script>
+                        getData()
+
+                        document.getElementById("campo").addEventListener("keyup", getData)
+
+                        function getData() {
+                            let input = document.getElementById("campo").value
+                            let content = document.getElementById("content")
+                            let url = "http://localhost/ProyectoTeclab/Entradas/buscadorEntradas.php"
+                            let formaData = new FormData()
+                            formaData.append('campo', input)
+
+                            fetch(url, {
+                                method: "POST",
+                                body: formaData
+                            }).then(response => response.json())
+                            .then(data => {
+                                content.innerHTML = data
+                            }).catch(err => console.log(err))
+                        }
+
+                </script>
         </div>
         <!-- <div class="botones">
             <button class="boton" id="btn-editar">Editar</button>

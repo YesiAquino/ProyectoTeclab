@@ -76,7 +76,7 @@ img{
     border-radius: 5px;
     cursor: pointer;
 }
-#btn-agregar a{
+a{
     text-decoration: none;
     color: #fff;
 }
