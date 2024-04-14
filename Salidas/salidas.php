@@ -33,6 +33,7 @@
                         <th id="cod-ref">Codigo de Referencia</th>
                         <th id="fecha">Fecha</th>
                         <th id="acciones">Acciones</th>
+
                     </tr>
                 </thead>
                 <tbody id="content">

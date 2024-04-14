@@ -39,8 +39,7 @@ if ($num_rows > 0) {
         $html .= '<td>' . $row['total'] . '</td>';
         $html .= '<td class="acciones">
         
-        <button class="accion" id="editar"><a href="ABM/editarForm3.php?Id=' . $row['id_salida'] . '">Editar</a></button>
-        <button class="accion" id="eliminar"><a href="ABM/eliminarDato3.php?Id=' . $row['id_salida'] . '">Eliminar</a></button>
+        <button class="accion" id="eliminar"><a href="eliminarDetalle.php?Id=' . $row['id_salida'] . '">Eliminar</a></button>
 
         </td>';
 

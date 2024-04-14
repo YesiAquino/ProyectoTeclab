@@ -38,15 +38,14 @@ if ($num_rows > 0) {
         $html .= '<td>' . $row['fecha'] . '</td>';
         $html .= '<td class="acciones">
         
-        <button class="accion" id="editar"><a href="ABM/editarForm2.php?Id=' . $row['id_prodentrada'] . '">Editar</a></button>
-        <button class="accion" id="eliminar"><a href="ABM/eliminarDato2.php?Id=' . $row['id_prodentrada'] . '">Eliminar</a></button>
+        <button class="accion" id="eliminar"><a href="BM/eliminarDatos2.php?Id=' . $row['id_prodentrada'] . '">Eliminar</a></button>
 
         </td>';
 
     }
 } else {
     $html .= '<tr>';
-    $html .= '<td colspan="4">Sin resultados</td>';
+    $html .= '<td colspan="5">Sin resultados</td>';
     $html .= '</tr>';
 }
 

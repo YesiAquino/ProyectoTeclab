@@ -36,8 +36,7 @@ if ($num_rows > 0) {
         $html .= '<td>' . $row['fecha'] . '</td>';
         $html .= '<td class="acciones">
         
-        <button class="accion" id="editar"><a href="ABM/editarForm3.php?Id=' . $row['id_det'] . '">Editar</a></button>
-        <button class="accion" id="eliminar"><a href="ABM/eliminarDato3.php?Id=' . $row['id_det'] . '">Eliminar</a></button>
+        <button class="accion" id="eliminar"><a href="BM/eliminarDatos3.php?Id=' . $row['id_det'] . '">Eliminar</a></button>
 
         </td>';
 

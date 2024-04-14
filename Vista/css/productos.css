@@ -125,3 +125,7 @@ input{
     width: 40px;
     height: 40px;
 }
+.btn-x{
+    display: flex;
+    justify-content: flex-end;
+}

@@ -8,9 +8,9 @@ $cantidad = $_POST['cantidadP'];
 $fecha = $_POST['fechaP'];
 
 $sql = "UPDATE entradas SET
-        id_prod='".$idProd."',
+        id_prodentrada='".$idProd."',
         cantidad='".$cantidad."',
-        fecha='".$fecha."' WHERE id_prod = '$id'";
+        fecha='".$fecha."' WHERE id_entrada = '$id'";
 
 if ($obj = pg_query($conexion, $sql)) {
     header("location:../entradas.php");

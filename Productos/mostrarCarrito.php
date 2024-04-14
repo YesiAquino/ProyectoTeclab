@@ -12,8 +12,9 @@ include 'carrito.php';
     <title>Lista del carrito</title>
 </head>
 <body>
-
-    <button class="accion"><a href="http://localhost/ProyectoTeclab/Productos/productos.php">X</a></button>
+    <div class="btn-x">
+    <button class="accion" id="x"><a href="http://localhost/ProyectoTeclab/Productos/productos.php">X</a></button>
+    </div>
     
     <h3>Lista del carrito</h3>
 
@@ -48,11 +49,8 @@ include 'carrito.php';
                     <td>$<?php echo number_format($producto['PRECIO']*$producto['CANTIDAD'],2);?></td>
                     <td>
                         <form action="" method="post">
-                        
-                        <input type="hidden" id="id" name="id" value="<?php echo ($producto['ID'])?>";>
-
-                        <button class="accion" type="submit" name="btnComprar" value="Eliminar">Eliminar</button>
-
+                            <input type="hidden" id="id" name="id" value="<?php echo ($producto['ID'])?>";>
+                            <button class="accion" type="submit" name="btnComprar" value="Eliminar">Eliminar</button>
                         </form>
                     </td>
                 </tr>

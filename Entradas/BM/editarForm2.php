@@ -16,19 +16,19 @@ include '../../conexion.php';
             <?php 
                 $req = $_REQUEST['Id'];
 
-                $sql = "SELECT * FROM entradas WHERE id_prod='$req'";
+                $sql = "SELECT * FROM entradas WHERE id_prodentrada='$req'";
                 $obj = pg_query($conexion, $sql);
 
                 $row=pg_fetch_assoc($obj);
             ?>
 
-        <input type="Hidden" name="Id" value="<?php echo $row['id_prod']?>">
+        <input type="Hidden" name="Id" value="<?php echo $row['id_prodentrada']?>">
 
             <h2>Editar Producto</h2>           
                 <label for="id-entrada" >Id Entrada:</label>
                     <input id="id-entrada" type="text" name="entradaP" value="<?php echo $row['id_entrada']?>">               
                 <label for="id_producto">Id Producto:</label>
-                    <input id="id_producto" type="text" name="idP" value="<?php echo $row['id_prod']?>">
+                    <input id="id_producto" type="text" name="idP" value="<?php echo $row['id_prodentrada']?>">
                 <label for="cantidad-producto">Cantidad:</label>
                     <input id="cantidad-producto" type="text" name="cantidadP" value="<?php echo $row['cantidad']?>">
                 <label for="fecha">Fecha:</label><br>
