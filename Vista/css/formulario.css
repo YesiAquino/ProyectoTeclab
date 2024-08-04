@@ -1,0 +1,106 @@
+html{
+    background-color: #e3f1fe;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.encabezado{
+    background-color: #7aa5d2;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+img{
+    width: 200px;
+}
+.contenedor-formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+}
+h2{
+    text-align: center;
+}
+form{
+    background: #7aa5d2;
+    border-radius: 15px;
+    width: 420px;
+    height: 480px;
+    padding: 20px;
+    position: relative;
+}
+input{
+    background-color: #cedff1;
+    color: #000;
+    border-radius: 2px;
+    width: 250px;
+    border: none;
+    height: 32px;
+}
+select{
+    background-color: #cedff1;
+    color: #000;
+    border-radius: 2px;
+    width: 250px;
+    border: none;
+    height: 32px;
+}
+.botones{
+    margin-top: 40px;
+    text-align: center;
+}
+button{
+    font-size: 13px;
+    border: 2px;
+    height: 40px;
+    width: 45%;
+    font-size: 13px;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.submit{
+    background: #18a077;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reset{
+    background: #e44040;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;   
+}
+
+label{
+    font-weight: bold;
+    display: block;
+}
+
+input[type="file"]{
+    display: none;
+}
+label[for="file_producto"]{
+    color: #cedff1;
+    height: 180px;
+    width: 130px;
+    background-color: #fff;
+    border: solid gainsboro;
+    border-radius: 5px;
+    position: absolute;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    top: 141px;
+    left: 300px;
+    cursor: pointer;
+}
+i{
+    color: gainsboro;
+}

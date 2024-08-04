@@ -1,2 +1,0 @@
-# ProyectoTeclab
-Gestor de inventario
