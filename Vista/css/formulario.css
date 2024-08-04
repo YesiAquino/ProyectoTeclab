@@ -13,23 +13,32 @@ html{
 img{
     width: 200px;
 }
+body{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
 .contenedor-formulario{
+    background: #7aa5d2;
+    border-radius: 15px;
+    width: 420px;
+    height: 480px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;  
 }
 h2{
     text-align: center;
 }
-form{
+/* form{
     background: #7aa5d2;
     border-radius: 15px;
     width: 420px;
     height: 480px;
     padding: 20px;
     position: relative;
-}
+} */
 input{
     background-color: #cedff1;
     color: #000;
@@ -82,7 +91,7 @@ label{
     display: block;
 }
 
-input[type="file"]{
+/* input[type="file"]{
     display: none;
 }
 label[for="file_producto"]{
@@ -100,7 +109,7 @@ label[for="file_producto"]{
     top: 141px;
     left: 300px;
     cursor: pointer;
-}
-i{
+} */
+/* i{
     color: gainsboro;
-}
+} */
