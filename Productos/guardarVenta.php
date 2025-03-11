@@ -23,7 +23,7 @@ if (isset($_POST['guardarCarrito'])){
         
                 if ($resultado = pg_query($conexion, $query2)){
 
-                    $actualizarStock = "UPDATE productos SET stock = stock-1 WHERE id_prod = '$idProd'";
+                    $actualizarStock = "UPDATE productos SET stock = stock-'$cantidad' WHERE id_prod = '$idProd'";
 
                     if(pg_query($conexion, $actualizarStock)){
 

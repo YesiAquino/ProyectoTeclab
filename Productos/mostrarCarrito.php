@@ -40,7 +40,7 @@ include 'carrito.php';
                     <td>
 
 
-                    <div class="btncantidad">
+                        <div class="btncantidad">
                             <form action="" method="post">
                                 <input type="hidden" id="id" name="id" value="<?php echo ($producto['ID'])?>";>
                                 <button class="btncant" type="submit" name="btnComprar" value="Decrementar">-</button>
